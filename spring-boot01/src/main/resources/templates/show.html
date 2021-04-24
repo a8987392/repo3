@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+    <style type="text/css">
+        li{
+            float: left;
+            list-style: none;
+            padding: 3px;
+
+
+
+
+        }
+
+
+
+
+
+    </style>
+</head>
+<body>
+
+<table border="1" align="center">
+    <tr>
+        <th>#</th>
+        <th>id</th>
+        <th>name</th>
+        <th>price</th>
+        <th>author</th>
+    </tr>
+
+    <tr th:each="book,stat:${page.records}">
+        <td th:text="${stat.count}"></td>
+        <td th:text="${book.id}"></td>
+        <td th:text="${book.name}"></td>
+        <td th:text="${book.price}"></td>
+        <td th:text="${book.author}"></td>
+        <td><a type="button" th:href="@{/delete/{id}(id=${book.id},pn=${page.current})}">删除</a></td>
+    </tr>
+    <br>
+    <br>
+</table>
+
+<div align="center">
+    当前第[[${page.current}]]页,共[[${page.pages}]]页，共[[${page.total}]]条记录.
+</div>
+
+<ul >
+    <li>上一页</li>
+    <li  th:class="${num == page.current?'active':''}" th:each="num:${#numbers.sequence(1,page.pages)}">
+    <a th:href="@{/mybatis(pn=${num})}">[[${num}]]</a>
+
+    </li>
+
+    <li>下一页</li>
+</ul>
+
+
+
+
+
+</body>
+</html>

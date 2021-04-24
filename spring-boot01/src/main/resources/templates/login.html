@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>主页</title>
+
+    <head th:fragment="commonhead">
+        <script src="jquery-3.5.1.js" language="JavaScript"></script>
+        <link rel="stylesheet" type="text/css" href="CSS/test.css">
+        <script  type="text/javascript" src="myjs/tt.js"></script>
+    </head>
+
+
+
+
+
+
+
+</head>
+<body>
+
+
+
+<br>
+<br>
+<h1 align="center">这里是登录页</h1>
+<br>
+<br>
+
+
+
+
+
+<form method="post" action="" th:action="@{/login}" align="center">
+    用户名：<input type="text" name="username"><br>
+    密码:<input type="text" name="password"><br>
+
+    <input type="submit" value="点击登录">
+
+</form>
+
+<img src="image/1000.png"></img>
+
+
+
+<div th:fragment="commonbody">
+<div class="test">
+    <h1 align="center">这里是公共页面</h1>
+   <br>
+    <br>
+
+    <button id="button">我是公共页面按钮</button>
+</div>
+</div>
+
+
+
+
+</body>
+</html>

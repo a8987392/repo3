@@ -1,0 +1,26 @@
+<!DOCTYPE html >
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+    <head th:replace="login.html::commonhead"></head>
+</head>
+<body>
+<h1>这里是登陆后的主页！</h1>
+<br>
+<h1>你好,</h1>
+<br>
+<br>
+
+
+
+
+<h1 th:text="${session.user.getUsername()}"></h1>
+
+
+<div th:replace="login.html::commonbody"></div>
+
+
+</body>
+</html>

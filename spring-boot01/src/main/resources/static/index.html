@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="/jquery-3.5.1.js" language="JavaScript"></script>
+    <script type="text/javascript">
+        $(function(){
+         $("#msgsub").click(function (){
+
+             var data=$("#msg").val()
+
+
+             $.ajax({
+                 url:"/MSG",
+                 type:"post",
+                 dataType:"text",
+                 contentType : "application/json",
+                 data:data,
+                 success: function (data2){
+
+                 }
+                 }
+            )
+
+             window.location.href = "show.html"
+
+         })
+
+
+
+        });
+
+
+
+    </script>
+
+
+
+
+</head>
+<body>
+<h2>这里是欢迎页！</h2>
+
+<form action="/user" method="get">
+    <input type="submit" value="get请求提交">
+</form>
+
+<form action="/user" method="post">
+    <input type="submit" value="post请求提交">
+</form>
+
+<form action="/user" method="post">
+    <input name="_method" type="hidden"  value="put" >
+    <input type="submit" value="put请求提交">
+</form>
+
+<form action="/user" method="post">
+    <input name="_method" type="hidden"  value="delete" >
+    <input type="submit" value="delete请求提交">
+</form>
+<br>
+<br>
+<br>
+<br>
+<br>
+
+<a href="/userID/5/username/tangchongchao/age/18/inters/game&running">Rest风格的get请求</a>
+<br>
+<br>
+<br>
+<a href="/get">get测试</a>
+
+
+
+<form action="/MSG2" method="post">
+
+ <input type="text" name="msg" value="m1,m2">
+
+
+    <input type="submit" value="提交" >
+
+
+</form>
+
+<br>
+<br>
+<br>
+
+
+<a href="/gt/id=1,2,3,4,5/id=tcc,fxy">gtgtgtgtgt</a>
+
+
+
+
+
+
+
+
+
+
+</body>
+</html>

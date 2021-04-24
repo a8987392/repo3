@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>上传界面</title>
+</head>
+<body>
+请选择你要上传的文件：
+<form method="post" th:action="@{/multiupload}" enctype="multipart/form-data">
+    <input type="file" name="file" >
+    <br>
+    <input type="file" name="file" >
+    <br>
+    <input type="file" name="file" >
+    <br>
+
+    <br>
+    <input type="submit" value="上传文件">
+
+</form>
+</body>
+</html>
